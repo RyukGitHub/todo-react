@@ -1,0 +1,26 @@
+.container {
+  border: 1px solid silver;
+  width: 800px;
+  border-radius: 10px;
+}
+
+.input-title,
+.input-desc {
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+
+.header {
+  font-size: x-large;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.eachtodo-title {
+  font-weight: bold;
+}
