@@ -25,6 +25,9 @@ FROM nginx:alpine
 # Copy build files from Stage 1 to nginx path
 COPY --from=build /app/react/build /usr/share/nginx/html
 
+# Copy nginx configuration (if needed)
+COPY nginx.conf /etc/nginx/nginx.conf
+
 # Expose port 80
 EXPOSE 80
 
