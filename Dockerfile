@@ -22,11 +22,8 @@ RUN npm run build
 # Stage 2: Serve React Application using nginx
 FROM nginx:alpine
 
-# Set the working directory for nginx
-WORKDIR /usr/share/nginx/html
-
 # Copy build files from Stage 1 to nginx path
-COPY --from=build /app/react/build .
+COPY --from=build /app/react/build /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
