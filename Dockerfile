@@ -19,14 +19,14 @@ COPY . .
 # Build React application
 RUN npm run build
 
-# Stage 2: Serve React Application using nginx
-FROM nginx:alpine
+# Stage 2: Serve React Application using serve
+FROM node:20.15.1-alpine
 
 # Install `serve` globally
 RUN npm install -g serve
 
-# Copy build files from Stage 1 to nginx path
-COPY --from=build /app/react/build /usr/share/nginx/html
+# Copy build files from Stage 1 to current path
+COPY --from=build /app/react/build home/build
 
 # Expose port 5000 (default port for `serve`)
 EXPOSE 5000
