@@ -8,13 +8,13 @@ ENV APP_HOME=/app/react
 WORKDIR $APP_HOME
 
 # Copy package.json and package-lock.json from local to docker image path
-COPY package*.json /app/react/
+COPY package*.json ./
 
 # Install dependencies (node modules)
 RUN npm install
 
 # Copy all files from local to docker image path
-COPY . /app/react/
+COPY . .
 
 # Build React application
 RUN npm run build
